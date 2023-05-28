@@ -1,4 +1,24 @@
 const Header = (baslik, tarih, yazi) => {
+  
+  const header = document.createElement("div");
+  header.classList.add("header");
+
+  const span = document.createElement("span");
+  span.classList.add("date");
+  span.textContent = tarih;
+  header.append(span);
+
+  const h1 = document.createElement("h1");
+  h1.textContent = baslik;
+  header.append(h1);
+
+  const span1 = document.createElement("span");
+  span1.classList.add("temp");
+  span1.textContent = yazi;
+  header.append(span1);
+
+  return header
+
   // GÖREV 1
   // ---------------------
   // Bu fonksiyon argüman olarak `baslik`, `tarih` ve `temp` alarak aşağıdaki yapıyı döndürecek.
@@ -23,6 +43,9 @@ const headerEkleyici = (secici) => {
 
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
+
+  const header = Header ( "Teknoloji Zamanı", "11 Kasım 2022", "sağdaki yazı");
+  document.querySelector(secici).append(header)
  
 }
 
